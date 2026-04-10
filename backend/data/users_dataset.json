@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1775768903957",
+    "name": "bhavya",
+    "email": "bhavyasethiya30@gmail.com",
+    "password": "$2b$10$vNlnFe8EaKqniVq11eHhXO0qG0BLIkk7k8xPwR6dHr2XNJxxvkMcW",
+    "isVerified": false,
+    "verificationCode": "5582",
+    "createdAt": "2026-04-09T21:08:23.957Z"
+  },
+  {
+    "id": "1775779161025",
+    "name": "bhavya",
+    "email": "bhavya@gmail.com",
+    "password": "$2b$10$8eBsOICX4x4S/wNkUdS5MuzlXxi/.sZPmH/CHMtIsEBGSNACCPA3e",
+    "createdAt": "2026-04-09T23:59:21.027Z"
+  }
+]

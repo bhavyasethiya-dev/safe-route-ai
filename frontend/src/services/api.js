@@ -5,6 +5,15 @@ const api = axios.create({
   timeout: 15000,
 });
 
+// Attach JWT token to all requests
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('safeRouteToken');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
 export const geocodeSearch = async (query) => {
   const { data } = await api.get(`/geocode?q=${encodeURIComponent(query)}`);
   return data.results;
@@ -33,4 +42,25 @@ export const fetchHeatmap = async (bounds) => {
 export const fetchEmergencyServices = async (lat, lon) => {
   const { data } = await api.get(`/emergency?lat=${lat}&lon=${lon}`);
   return data.services;
+};
+
+// Auth
+export const loginUser = async (email, password) => {
+  const { data } = await api.post('/auth/login', { email, password });
+  return data;
+};
+
+export const registerUser = async (name, email, password) => {
+  const { data } = await api.post('/auth/register', { name, email, password });
+  return data;
+};
+
+export const updateProfile = async (updates) => {
+  const { data } = await api.put('/auth/profile', updates);
+  return data;
+};
+
+export const deleteProfile = async () => {
+  const { data } = await api.delete('/auth/profile');
+  return data;
 };

@@ -4,6 +4,7 @@ import routingRouter from './routes/routing.js';
 import geocodingRouter from './routes/geocoding.js';
 import heatmapRouter from './routes/heatmap.js';
 import emergencyRouter from './routes/emergency.js';
+import authRouter from './routes/auth.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -23,6 +24,7 @@ app.use('/routes', routingRouter);
 app.use('/geocode', geocodingRouter);
 app.use('/heatmap', heatmapRouter);
 app.use('/emergency', emergencyRouter);
+app.use('/auth', authRouter);
 
 // Health check
 app.get('/health', (_req, res) => {
